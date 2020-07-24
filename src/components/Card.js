@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 
 function Card({person}) {
+    //or const {person} = props;  instead of destructuring the object in the parameters of the function above.
     return(
         <div className="card">
             <h2 className ="number">{this.props.person[0].id}/25</h2>
