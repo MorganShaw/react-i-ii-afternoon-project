@@ -17,33 +17,44 @@ class App extends Component {
       contacts: contacts
     }
 
-    // this.nextCard = this.handleNext.bind(this)
-    // this.previousCard = this.handlePrevious.bind(this)
+    this.handleNext = this.handleNext.bind(this)
+    this.handlePrevious = this.handlePrevious.bind(this)
   }
 
-
-
-  nextCard(index) {
-    const cardDisplayed = [this.state.contacts[0]];
-    this.setState({
-      index: index + 1
-    })
-    this.state.contacts[1]
+  handleNext() {
+    if(this.state.index === this.state.contacts.length - 1) {
+      this.setState({
+        index: this.state.index
+      })
+    } else {
+      this.setState({
+        index: this.state.index + 1
+      })
+    }
   }
 
-  previousCard(index) {
-    const person = [this.state.contacts[index]];
-    this.setState({
-      index: index - 1
-    })
-  }
-
+  handlePrevious() {
+    if(this.state.index === 0) {
+      let newIndex = this.state.contacts.length - 1
+      this.setState({
+        index: newIndex
+      })
+     } else {
+       this.setState({
+       index: this.state.index - 1
+     })
+    }
+  } 
 
   render() {
+    let mappedContacts = this.state.contacts.map(person => {
+      return <Card key={person.id} person={person}/>
+    })
+
     return (
     <div className="App">
         <Header />
-        <Card personCard={this.state.contacts}/>
+        {mappedContacts[this.state.index]}
         <CardNav next={this.handleNext} previous={this.handlePrevious}/>
     </div>
     );
