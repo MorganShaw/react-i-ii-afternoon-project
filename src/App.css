@@ -17,6 +17,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: calc(10px + 2vmin);
   color: black;
   font-weight: bolder;
@@ -28,6 +29,10 @@
   width: 80%;
   background-color: rgb(235, 233, 233);
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+
 }
 
 .cardnav {
@@ -59,3 +64,61 @@
   text-align: right;
 }
 
+
+.number {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 10px;
+
+}
+
+.name {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 40px;
+  text-decoration: underline;
+  text-decoration-color:  rgb(52, 187, 228);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+
+
+.from, .job, .employer, .person-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  line-height: 1.6;
+}
+
+.person-response {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: lighter;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-left: 10px;
+}
+
+.midcard {
+  margin-bottom: 30px;
+}
+
+.movielist {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20px;
+  line-height: 1.6;
+}

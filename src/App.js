@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './reset.css';
 import contacts from './contacts';
 import Card from './components/Card';
 import Header from './components/Header';
@@ -24,7 +25,7 @@ class App extends Component {
   handleNext() {
     if(this.state.index === this.state.contacts.length - 1) {
       this.setState({
-        index: this.state.index
+        index: 0
       })
     } else {
       this.setState({
@@ -48,14 +49,14 @@ class App extends Component {
 
   render() {
     let mappedContacts = this.state.contacts.map(person => {
-      return <Card key={person.id} person={person}/>
+      return <Card  key={person.id} person={person}/>
     })
 
     return (
     <div className="App">
         <Header />
         {mappedContacts[this.state.index]}
-        <CardNav next={this.handleNext} previous={this.handlePrevious}/>
+        <CardNav handleNext={this.handleNext} handlePrevious={this.handlePrevious}/>
     </div>
     );
   }
